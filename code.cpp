@@ -15,6 +15,22 @@
 #include <climits>
 #include <limits>
 
+#if __has_include(<boost/range/combine.hpp>)
+#include <boost/range/combine.hpp> //Zip function for C++
+#endif
+
+#if __has_include(<boost/multiprecision/cpp_int.hpp>)
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_dec_float.hpp>
+using pyint = boost::multiprecision::cpp_int;
+using i128 = boost::multiprecision::int128_t;
+using i256 = boost::multiprecision::int256_t;
+using i512 = boost::multiprecision::int512_t;
+using i1024 = boost::multiprecision::int1024_t;
+using f50 = boost::multiprecision::cpp_dec_float_50;
+using f100 = boost::multiprecision::cpp_dec_float_100;
+#endif
+
 //Binary Indexed Tree
 // #include<ext/pb_ds/assoc_container.hpp>
 // #include<ext/pb_ds/tree_policy.hpp>
@@ -109,8 +125,8 @@ using cpmath::mod99;
 using cpmath::imax;
 using cpmath::llmax;
 
-//using cpmath::DX4;
-//using cpmath::DY4;
+using cpmath::DX4;
+using cpmath::DY4;
 //using cpmath::DX8;
 //using cpmath::DY8;
 
